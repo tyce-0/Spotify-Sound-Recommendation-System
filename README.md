@@ -121,14 +121,14 @@ Run it locally with:
 streamlit run app/streamlit_app.py
 ```
 
-![App search and recommendations](assets/screenshots/app_recommendations.png)
+![App search ](assets/screenshots/app_search.png)
 ![Recommendations for One Dance Drake](assets/screenshots/app_recommendations.png)
 
 ## Notes on the modeling approach
 
 A natural question is why this project uses simple cosine similarity over hand-picked audio features rather than a more sophisticated embedding-based or collaborative-filtering approach. The answer is mostly about what data was actually available: this project has no user-listening or playlist co-occurrence data, only track-level audio characteristics. Given that constraint, a **content-based** approach was the honest choice. It makes no claims about what real listeners actually group together, only about which songs *sound* alike by a fixed set of numeric measures.
 
-This is also exactly why the One Dance result above matters. Cosine similarity over `danceability`, `energy`, `tempo`, etc. has no concept of genre, language, or cultural context — it will happily group songs that share a danceable tempo and upbeat mood even if a human listener would never put them in the same playlist. A collaborative-filtering approach, trained on real co-occurrence in user playlists, would likely correct exactly this kind of mismatch — because it learns from *how people actually group songs*, not just how the songs measure numerically.
+This is also exactly why the One Dance result above matters. Cosine similarity over `danceability`, `energy`, `tempo`, etc. has no concept of genre, language, or cultural context — it will happily group songs that share a danceable tempo and upbeat mood even if a human listener would never put them in the same playlist. A collaborative-filtering approach, trained on real co-occurrence in user playlists, would likely correct exactly this kind of mismatch  because it learns from *how people actually group songs*, not just how the songs measure numerically.
 
 `StandardScaler` was used before clustering and similarity calculations because the nine audio features live on very different scales (`tempo` spans roughly 0–250; most others span 0–1) — without scaling, `tempo` would dominate every distance calculation by sheer magnitude, not because it's actually more musically important.
 
