@@ -148,7 +148,7 @@ This is also exactly why the One Dance result above matters. Cosine similarity o
 
 ## About
 
-Built as a personal portfolio project to demonstrate a complete, honest data science workflow: data validation, exploratory analysis, unsupervised learning, and a deployed recommendation system — using real, verified data throughout and documenting real limitations rather than hiding them.
+Built as a project during my data science training at GOMYCODE, to demonstrate a complete, honest data science workflow: data validation, exploratory analysis, unsupervised learning, and an interactive recommendation app, using real, verified data throughout and documenting real limitations rather than hiding them.
 
 **Tech stack:** Python, pandas, scikit-learn, matplotlib/seaborn, Streamlit, Plotly
 
